@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="all">Обрати все</string>
+    <string name="arch_for_device">Вибір архітектури для вашого пристрою</string>
+    <string name="ask">Запитувати де зберегти файл</string>
+    <string name="automatically_select">Автоматичний вибір відповідно до вашої архітектури пристрою</string>
+    <string name="cancel">Відміна</string>
+    <string name="change_background_color">Змінити колір тла</string>
+    <string name="change_text_color">Змінити колір тексту</string>
+    <string name="select">Вибрати</string>
+    <string name="dpi_for_device">Виберіть ширину екрана для Вашого пристрою</string>
+    <string name="enable_logs">Увімкнути журнали</string>
+    <string name="error_dir_access">Доступ до каталогу неможливий</string>
+    <string name="for_device">Вибір все відповідно до вашої архітектури пристрою</string>
+    <string name="grant_storage">Необхідний дозвіл на зберігання для збереження в тій же папці, що й вибраний файл</string>
+    <string name="label_parent_directory">Батьківський каталог</string>
+	<string name="lang">Мова</string>								 
+    <string name="lang_for_device">Вибір мови для вашого пристрою</string>
+    <string name="last_edit">Останнє редагування:</string>
+    <string name="merge">Виберіть (Split APK) для обєднання/антирозділення</string>
+    <string name="no_filepath">Не вдалося знайти шлях до вибраного файлу</string>
+    <string name="not_apk">: Не APK-файл</string>
+    <string name="nothing">Нічого не вибрано</string>
+    <string name="output">"Вихідний каталог: "</string>
+    <string name="removed_table_entry">"Видалено запис у таблиці : "</string>
+    <string name="sanitizing_manifest">Санітарна обробка маніфесту…</string>
+    <string name="saving">Збереження…</string>
+    <string name="searching">Пошук apk-файлів…</string>
+    <string name="select_splits">Вибрати Splits</string>
+    <string name="show_dialog">Показати діалогове вікно, яке дозволяє вибрати, які Splits APK увімкнути</string>
+    <string name="sign_apk">Підписати APK після злиття</string>
+    <string name="sign_failed">Неможливо підписати APK, збережено без підпису</string>
+    <string name="signing">Підпис APK…</string>
+    <string name="skipping">"Перепустка "</string>
+    <string name="success_saved">Файл успішно збережено</string>
+    <string name="unselected">: Не вибрано</string>
+</resources>

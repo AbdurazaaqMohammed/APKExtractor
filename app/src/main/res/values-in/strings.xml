@@ -1,0 +1,36 @@
+<resources>
+    <string name="merge">Pilih APK terpisah yang ingin Dileburkan/Di-AntiSplit</string>
+    <string name="success_saved">Berkas berhasil disimpan</string>
+    <string name="enable_logs" >Aktifkan log</string>
+    <string name="ask">Tanyakan terus di mana berkas akan disimpan</string>
+    <string name="grant_storage">Perizinan penyimpanan diperlukan untuk menyimpan ke direktori yang sama dengan berkas yang dipilih</string>
+    <string name="no_filepath">"Tidak bisa menuliskan ke jalur berkas "</string>
+    <string name="output">"Direktori keluaran: "</string>
+    <string name="show_dialog">Perlihatkan dialog yang memungkinkan pemilihan APK terpisah mana yang akan disertakan</string>
+    <string name="nothing">Tidak ada yang dipilih</string>
+    <string name="change_text_color">Ubah warna teks</string>
+    <string name="change_background_color">Ubah warna latar belakang</string>
+    <string name="all">Pilih Semua</string>
+    <string name="for_device">Pilih semua APK terpisah sesuai spesifikasi perangkat Anda</string>
+    <string name="lang_for_device">Pilih bahasa sesuai perangkat Anda</string>
+    <string name="arch_for_device">Pilih arsitektur sesuai perangkat Anda</string>
+    <string name="dpi_for_device">Pilih lebar layar sesuai perangkat Anda</string>
+    <string name="select_splits">Pilih APK terpisah</string>
+    <string name="sign_apk">Tanda tangani APK setelah peleburan</string>
+    <string name="automatically_select">Pilih APK terpisah secara otomatis sesuai spesifikasi perangkat Anda</string>
+    <string name="sign_failed">Gagal menandatangani APK, sedang menyimpan tanpa menandatangani</string>
+    <string name="signing">Menandatangani APK…</string>
+    <string name="saving">Menyimpan…</string>
+    <string name="removed_table_entry">"Entri tabel yang dihapus : "</string>
+    <string name="sanitizing_manifest">Menyanitasi manifes…</string>
+    <string name="skipping">"Meloncati "</string>
+    <string name="not_apk">: Bukan sebuah berkas APK</string>
+    <string name="unselected">: Tidak dipilih</string>
+    <string name="searching">Mencari berkas APK…</string>
+    <string name="cancel">Batalkan</string>
+    <string name="select">Pilih</string>
+    <string name="label_parent_directory">Direktori Induk</string>
+    <string name="last_edit">Terakhir kali disunting: </string>
+    <string name="error_dir_access">Direktorinya tidak bisa diakses</string>
+    <string name="lang" translatable="false">Bahasa</string>
+</resources>

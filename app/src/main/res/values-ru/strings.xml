@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="all">Выбрать все</string>
+    <string name="arch_for_device">Выбор архитектуру для вашего устройства</string>
+    <string name="ask">Спрашивать где сохранить файл</string>
+    <string name="automatically_select">Автоматический выбор в соответствии вашей архитектуры устройства</string>
+    <string name="cancel">Отмена</string>
+    <string name="change_background_color">Изменить цвет фона</string>
+    <string name="change_text_color">Изменить цвет текста</string>
+    <string name="select">Выбрать</string>
+    <string name="dpi_for_device">Выбор ширину экрана для вашего устройства</string>
+    <string name="enable_logs">Включить журналы</string>
+    <string name="error_dir_access">Доступ к каталогу невозможен</string>
+    <string name="for_device">Выбор все в соответствии вашей архитектуры устройства</string>
+    <string name="grant_storage">Необходимо разрешение на хранение для сохранения в той же папке, что и выбранный файл</string>
+    <string name="label_parent_directory">Родительский каталог</string>
+	<string name="lang">Язык</string>								 
+    <string name="lang_for_device">Выбор язык для вашего устройства</string>
+    <string name="last_edit">Последнее редактирование:</string>
+    <string name="merge">Выберите (Split APK) для объединения/антиразделения</string>
+    <string name="no_filepath">Не удалось найти путь к выбранному файлу</string>
+    <string name="not_apk">: Не APK-файл</string>
+    <string name="nothing">Ничего не выбрано</string>
+    <string name="output">"Выходной каталог: "</string>
+    <string name="removed_table_entry">"Удалена запись в таблице : "</string>
+    <string name="sanitizing_manifest">Санитарная обработка манифеста…</string>
+    <string name="saving">Сохранение…</string>
+    <string name="searching">Поиск apk-файлов…</string>
+    <string name="select_splits">Выбрать Splits</string>
+    <string name="show_dialog">Показать диалоговое окно, позволяющее выбрать, какие Splits APK включить</string>
+    <string name="sign_apk">Подписать APK после слияния</string>
+    <string name="sign_failed">Не удалось подписать APK, сохранено без подписи</string>
+    <string name="signing">Подпись APK…</string>
+    <string name="skipping">"Пропуск "</string>
+    <string name="success_saved">Файл успешно сохранен</string>
+    <string name="unselected">: Не выбрано</string>
+</resources>

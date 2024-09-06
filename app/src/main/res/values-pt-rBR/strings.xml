@@ -1,0 +1,52 @@
+<resources>
+    <string name="merge">Selecione split APK para mesclar/AntiSplit</string>
+    <string name="success_saved">Arquivo salvo com sucesso</string>
+    <string name="enable_logs" >Ativar logs</string>
+    <string name="ask">Pergunte onde salvar o arquivo a cada vez</string>
+    <string name="grant_storage">Permissão de armazenamento necessária para salvar no mesmo diretório do arquivo selecionado</string>
+    <string name="no_filepath">"Não é possível gravar no caminho do arquivo "</string>
+    <string name="output">"Diretório de saída: "</string>
+    <string name="show_dialog">Exibir caixa de diálogo permitindo a seleção de quais splits incluir</string>
+    <string name="nothing">Nada selecionado</string>
+    <string name="change_text_color">Alterar cor do texto</string>
+    <string name="change_background_color">Alterar cor de fundo</string>
+    <string name="all">Selecionar tudo</string>
+    <string name="for_device">Selecione todas os splits para as especificações do seu dispositivo</string>
+    <string name="lang_for_device">Selecione o idioma para o seu dispositivo</string>
+    <string name="arch_for_device">Selecione a arquitetura para seu dispositivo</string>
+    <string name="dpi_for_device">Selecione as larguras de tela para seu dispositivo</string>
+    <string name="select_splits">Selecione splits</string>
+    <string name="sign_apk">Assine o APK após a mesclagem</string>
+    <string name="automatically_select">Selecione automaticamente splits para as especificações do seu dispositivo</string>
+    <string name="sign_failed">Falha ao assinar APK, salvando sem assinar</string>
+    <string name="signing">Assinando APK…</string>
+    <string name="saving">Salvando…</string>
+    <string name="removed_table_entry">"Entrada de tabela removida:"</string>
+    <string name="sanitizing_manifest">Limpando manifest…</string>
+    <string name="skipping">"Pulando "</string>
+    <string name="not_apk">: Não é um arquivo APK</string>
+    <string name="unselected">: Não selecionado</string>
+    <string name="searching">Procurando arquivos apk…</string>
+    <string name="cancel">Cancelar</string>
+    <string name="select">Selecione</string>
+    <string name="label_parent_directory">Diretório pai</string>
+    <string name="last_edit">Última edição: </string>
+    <string name="error_dir_access">O diretório não pode ser acessado</string>
+    <string name="lang" translatable="false">Idioma</string>
+    <string name="update">Atualização disponível</string>
+    <string name="new_ver">Nova versão do AntiSplit M está disponível</string>
+    <string name="dl">Download</string>
+    <string name="auto_update">Verificar atualizações automaticamente</string>
+    <string name="check_update_now">Verifique se há atualizações agora</string>
+    <string name="no_update_found">Nenhuma atualização encontrada</string>
+    <string name="settings">Configurações</string>
+    <string name="close">Fechar</string>
+    <string name="mismatch">Os seguintes splits (%1$s) têm códigos de versão incompatíveis. Eles são apenas códigos de idioma, então o aplicativo pode ser executado sem eles, mas esses idiomas não funcionarão no aplicativo. Você quer continuar com a mesclagem mesmo assim?</string>
+    <string name="warning">Aviso</string>
+    <string name="mismatch_base">" o código da versão não corresponde ao do base.apk"</string>
+    <string name="label_parent_dir" translatable="false">…</string>
+    <string name="create_issue">Criar problema no GitHub</string>
+    <string name="copy_log">Copiar log</string>
+    <string name="pause">Botão de pausa</string>
+    <string name="copied_log">Log copiado</string>
+</resources>

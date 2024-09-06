@@ -1,0 +1,47 @@
+<resources>
+    <string name="merge">Sélectionner des APK fractionnés pour Fusionner/AntiSplit</string>
+    <string name="success_saved">Fichier enregistré avec succès</string>
+    <string name="enable_logs">Activer les logs</string>
+    <string name="ask">Demander où enregistrer le fichier à chaque fois</string>
+    <string name="grant_storage">Autorisation de stockage nécessaire pour enregistrer dans le même répertoire que le fichier sélectionné</string>
+    <string name="no_filepath">"Impossible d'écrire dans le chemin du fichier "</string>
+    <string name="output">"Répertoire de sortie : "</string>
+    <string name="show_dialog">Afficher la boîte de dialogue permettant la sélection des splits à inclure</string>
+    <string name="nothing">Rien de sélectionné</string>
+    <string name="change_text_color">Changer la couleur du texte</string>
+    <string name="change_background_color">Changer la couleur de l\'arrière-plan</string>
+    <string name="all">Tout sélectionner</string>
+    <string name="for_device">Sélectionner tous les splits pour les spécifications de votre appareil</string>
+    <string name="lang_for_device">Sélectionner la langue pour votre appareil</string>
+    <string name="arch_for_device">Sélectionner l\'architecture pour votre appareil</string>
+    <string name="dpi_for_device">Sélectionner les largeurs d\'écran pour votre appareil</string>
+    <string name="select_splits">Sélectionner les splits</string>
+    <string name="sign_apk">Signer l\'APK après la fusion</string>
+    <string name="automatically_select">Sélectionner automatiquement les splits pour les spécifications de votre appareil</string>
+    <string name="sign_failed">Échec de la signature de l\'APK, enregistrement sans signature</string>
+    <string name="signing">Signature de l\'APK…</string>
+    <string name="saving">Enregistrement…</string>
+    <string name="removed_table_entry">"Entrée de table supprimée : "</string>
+    <string name="sanitizing_manifest">Nettoyage du manifeste…</string>
+    <string name="skipping">"Ignoré "</string>
+    <string name="not_apk">: Ce n\'est pas un fichier APK</string>
+    <string name="unselected">: Non sélectionné</string>
+    <string name="searching">Recherche de fichiers APK…</string>
+    <string name="cancel">Annuler</string>
+    <string name="select">Sélectionner</string>
+    <string name="label_parent_directory">Répertoire parent</string>
+    <string name="last_edit">Dernière modification : </string>
+    <string name="error_dir_access">Le répertoire ne peut pas être accédé</string>
+    <string name="lang" translatable="false">Langue</string>
+    <string name="update">Mise à jour disponible</string>
+    <string name="new_ver">Nouvelle version d\'AntiSplit M disponible</string>
+    <string name="dl">Télécharger</string>
+    <string name="auto_update">Vérifier automatiquement les mises à jour</string>
+    <string name="check_update_now">Vérifier la mise à jour maintenant</string>
+    <string name="no_update_found">Aucune mise à jour trouvée</string>
+    <string name="settings">Paramètres</string>
+    <string name="close">Fermer</string>
+    <string name="mismatch">Les splits suivants (%1$s) ont des codes de version incompatibles. Ce sont uniquement des codes de langue, donc l\'application peut fonctionner sans eux, mais ces langues ne seront pas disponibles dans l\'application. Voulez-vous continuer la fusion malgré tout ?</string>
+    <string name="warning">Avertissement</string>
+    <string name="mismatch_base">" le code de version ne correspond pas à celui de base.apk"</string>
+</resources>

@@ -1,0 +1,35 @@
+<resources>
+    <string name="merge">Birleştirmek/Ayrıştırmak için split APK\'yı seçin.</string>
+    <string name="success_saved">Dosya başarıyla kaydedildi.</string>
+    <string name="enable_logs">Kayıtları etkinleştir</string>
+    <string name="ask">Her seferinde dosyanın nereye kaydedileceğini sor</string>
+    <string name="grant_storage">Storage permission needed to save to the same dir as the selected file</string>
+    <string name="no_filepath">Seçilen dosyanın dosya yolu bulunamadı</string>
+    <string name="output">"Çıktı klasörü: "</string>
+    <string name="show_dialog">Hangi splitlerin seçileceğine dair olan diyaloğu göster</string>
+    <string name="nothing">Hiçbir şey seçilmedi</string>
+    <string name="change_text_color">Yazı rengini değiştir</string>
+    <string name="change_background_color">Arkaplan rengini değiştir </string>
+    <string name="all">Hepsini seç</string>
+    <string name="for_device">Cihazın özelliklerine göre hepsini seç</string>
+    <string name="lang_for_device">Cihazınız için dili seç</string>
+    <string name="arch_for_device">Cihazınız için mimariyi seç</string>
+    <string name="dpi_for_device">Cihazınız için ekran genişliklerini seç</string>
+    <string name="select_splits">Splitleri seç</string>
+    <string name="sign_apk">APK\'yı birleştirdikten sonra imzala</string>
+    <string name="automatically_select">Cihazınızın özelliklerine uygun splitleri otomatik olarak seçin</string>
+    <string name="sign_failed">APK imzalanamadığından böylece kaydediliyor.</string>
+    <string name="signing">APK imzalanıyor…</string>
+    <string name="saving">Kaydediliyor…</string>
+    <string name="removed_table_entry">"Removed table-entry : "</string>
+    <string name="sanitizing_manifest">Manifesto sanitize ediliyor…</string>
+    <string name="skipping">Geçiliyor</string>
+    <string name="not_apk">Bu bir APK dosyası değil.</string>
+    <string name="unselected">Seçilmedi </string>
+    <string name="searching">APK dosyası aranıyor…</string>
+    <string name="cancel">İptal et</string>
+    <string name="select">Seç</string>
+    <string name="label_parent_directory">Ana Klasör</string>
+    <string name="last_edit">Son düzenlenme: </string>
+    <string name="error_dir_access">Klasöre erişilemedi</string>
+</resources>
