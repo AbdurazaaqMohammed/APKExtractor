@@ -21,12 +21,9 @@ import android.content.Context;
 import android.net.Uri;
 
 import io.github.abdurazaaqmohammed.ApkExtractor.R;
-import io.github.abdurazaaqmohammed.ApkExtractor.DeviceSpecsUtil;
 import io.github.abdurazaaqmohammed.ApkExtractor.MainActivity;
-import io.github.abdurazaaqmohammed.ApkExtractor.MismatchedSplitsException;
 import io.github.abdurazaaqmohammed.ApkExtractor.SignUtil;
-import com.j256.simplezip.ZipFileInput;
-import com.j256.simplezip.format.ZipFileHeader;
+
 import com.reandroid.apk.ApkBundle;
 import com.reandroid.apk.ApkModule;
 import com.reandroid.apkeditor.common.AndroidManifestHelper;
@@ -43,14 +40,9 @@ import com.reandroid.arsc.value.ResValue;
 import com.reandroid.arsc.value.ValueType;
 import com.starry.FileUtils;
 
-import org.apache.commons.compress.archivers.zip.ZipArchiveEntry;
-import org.apache.commons.compress.archivers.zip.ZipFile;
-
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.Enumeration;
 import java.util.List;
 
 public class Merger {
@@ -59,70 +51,6 @@ public class Merger {
         void onLog(String log);
 
         void onLog(int resID);
-    }
-
-    /** @noinspection ResultOfMethodCallIgnored*/
-    private static void extractAndLoad(Uri in, File cacheDir, Context context, List<String> splits, ApkBundle bundle) throws IOException, MismatchedSplitsException, InterruptedException {
-        logMessage(in.getPath());
-        boolean checkSplits = splits != null && !splits.isEmpty();
-        try (InputStream is = FileUtils.getInputStream(in, context);
-                ZipFileInput zis = new ZipFileInput(is)) {
-            ZipFileHeader header;
-            while ((header = zis.readFileHeader()) != null) {
-                String name = header.getFileName();
-                if (name.endsWith(".apk")) {
-                    if ((checkSplits && splits.contains(name)))
-                        logMessage(MainActivity.rss.getString(R.string.skipping) + name + MainActivity.rss.getString(R.string.unselected));
-                    else {
-                        File file = new File(cacheDir, name);
-                        if (file.getCanonicalPath().startsWith(cacheDir.getCanonicalPath() + File.separator))
-                            zis.readFileDataToFile(file);
-                        else throw new IOException("Zip entry is outside of the target dir: " + name);
-
-                        logMessage("Extracted " + name);
-                    }
-                } else
-                    logMessage(MainActivity.rss.getString(R.string.skipping) + name + MainActivity.rss.getString(R.string.not_apk));
-            }
-            bundle.loadApkDirectory(cacheDir, false, context);
-        } catch (MismatchedSplitsException m) {
-            throw new RuntimeException(m);
-        } catch (Exception e) {
-            // If the above failed it probably did not copy any files
-            // so might as well do it this way instead of trying unreliable methods to see if we need to do this
-            // and possibly copying the file for no reason
-
-            // Check if already copied the file earlier to get list of splits.
-            if (DeviceSpecsUtil.zipFile == null) {
-                File input = new File(FileUtils.getPath(in, context));
-                boolean couldNotRead = !input.canRead();
-                if (couldNotRead) try(InputStream is = FileUtils.getInputStream(in, context)) {
-                    FileUtils.copyFile(is, input = new File(cacheDir, input.getName()));
-                }
-                ZipFile zf = new ZipFile(input);
-                extractZipFile(zf, checkSplits, splits, cacheDir);
-                if (couldNotRead) input.delete();
-            } else extractZipFile(DeviceSpecsUtil.zipFile, checkSplits, splits, cacheDir);
-            bundle.loadApkDirectory(cacheDir, false, context);
-        }
-    }
-
-    private static void extractZipFile(ZipFile zf, boolean checkSplits, List<String> splits, File cacheDir) throws IOException {
-        Enumeration<ZipArchiveEntry> entries = zf.getEntries();
-        while (entries.hasMoreElements()) {
-            ZipArchiveEntry zae = entries.nextElement();
-            String name = zae.getName();
-            if (name.endsWith(".apk")) {
-                if ((checkSplits && splits.contains(name)))
-                    logMessage(MainActivity.rss.getString(R.string.skipping) + name + MainActivity.rss.getString(R.string.unselected));
-                else try (OutputStream os = FileUtils.getOutputStream(new File(cacheDir, name));
-                          InputStream is = zf.getInputStream(zae)) {
-                    FileUtils.copyFile(is, os);
-                }
-            } else
-                logMessage(MainActivity.rss.getString(R.string.skipping) + name + MainActivity.rss.getString(R.string.not_apk));
-        }
-        zf.close();
     }
 
     public static void run(ApkBundle bundle, File cacheDir, Uri out, Context context, boolean signApk) throws IOException {
@@ -263,13 +191,4 @@ public class Merger {
 
     public static File signedApk;
 
-    public static void run(Uri in, File cacheDir, Uri out, Context context, List<String> splits, boolean signApk) throws Exception {
-        logMessage(MainActivity.rss.getString(R.string.searching));
-        try (ApkBundle bundle = new ApkBundle()) {
-            if (in == null)
-                bundle.loadApkDirectory(cacheDir, false, context); // Multiple splits from a split apk, already copied to cache dir
-            else extractAndLoad(in, cacheDir, context, splits, bundle);
-            run(bundle, cacheDir, out, context, signApk);
-        }
-    }
 }

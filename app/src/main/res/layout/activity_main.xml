@@ -1,21 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:id="@+id/main"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/search_bar"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:id="@+id/userApps"
+            android:text="User apps" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:id="@+id/systemApps"
+            android:text="System apps" />
+    </LinearLayout>
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="🔍"
-        android:importantForAutofill="no"
-        android:inputType="text" />
+        android:paddingEnd="8dp"
+        android:paddingStart="8dp">
 
-    <ListView
-        android:id="@+id/list_view"
+        <EditText
+            android:id="@+id/search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/settingsButton"
+            android:layout_toStartOf="@id/settingsButton"
+            android:hint="🔍"
+            android:importantForAutofill="no"
+            android:inputType="text" />
+
+        <ImageView
+            android:id="@+id/settingsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:contentDescription="@string/settings"
+            android:src="@drawable/settings" />
+
+        <ImageView
+            android:id="@+id/filterButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/settingsButton"
+            android:layout_toStartOf="@id/settingsButton"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/filter"
+            android:src="@android:drawable/ic_menu_sort_by_size" />
+    </RelativeLayout>
+
+    <ExpandableListView
+        android:id="@+id/user_app_list_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent" />
+
+    <ExpandableListView
+        android:id="@+id/system_app_list_view"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>

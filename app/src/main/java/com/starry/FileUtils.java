@@ -1,7 +1,6 @@
 package com.starry;
 
 import static io.github.abdurazaaqmohammed.ApkExtractor.MainActivity.doesNotHaveStoragePerm;
-import static io.github.abdurazaaqmohammed.ApkExtractor.MainActivity.getOriginalFileName;
 
 import android.annotation.SuppressLint;
 import android.content.ContentUris;
@@ -252,16 +251,12 @@ public class FileUtils {
     }
 
     public static File copyFileToInternalStorage(Uri uri, Context context) throws IOException {
-        File output = new File(context.getCacheDir(), getOriginalFileName(context, uri));
+        File output = new File(context.getCacheDir(), io.github.abdurazaaqmohammed.ApkExtractor.MainActivity.getOriginalFileName(context, uri, !uri.getPath().endsWith(".apk")));
         if(output.exists() && output.length() > 999) return output;
-        try (OutputStream outputStream = FileUtils.getOutputStream(output); InputStream cursor = context.getContentResolver().openInputStream(uri)) {
-            int read;
-            byte[] buffers = new byte[1024];
-            while ((read = cursor.read(buffers)) != -1) {
-                outputStream.write(buffers, 0, read);
-            }
+        try (InputStream cursor = context.getContentResolver().openInputStream(uri)) {
+            copyFile(cursor, output);
+            return output;
         }
-        return output;
     }
 
     private static String getDataColumn(Context context, Uri uri, String selection, String[] selectionArgs) {

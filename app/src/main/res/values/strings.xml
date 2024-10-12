@@ -75,10 +75,29 @@
     <string name="select_from_installed_apps">Select from Installed Apps</string>
     <string name="app_icon_list_label">App icon</string>
     <string name="install">Install</string>
-    <string name="app_name_display" translatable="false">%s v%s (%d)</string>
+    <string name="app_name_display" translatable="false">%s %s %s</string>
     <string name="last_update">Last updated %s</string>
     <string name="first_installed">First installed %s</string>
     <string name="show_icons">Show icons in app list</string>
     <string name="merge_splits">Merge split APKs to single APK</string>
     <string name="changes_msg">Changes will be applied on next launch</string>
+    <string name="show_last_updated">Show last updated date</string>
+    <string name="show_first_install">Show first installed date</string>
+    <string name="show_pkg">Show package name</string>
+    <string name="show_app">Show app name</string>
+    <string name="show_v_code">Show version code</string>
+    <string name="show_v_name">Show version name</string>
+    <string name="extract_and_share">Extract and share</string>
+    <string name="antisplit_merge_and_share">AntiSplit/merge and share</string>
+    <string name="extract_apk_and_save">Extract APK and save</string>
+    <string name="extract_base_apk_and_save">Extract base.apk and save</string>
+    <string name="extract_split_apk_and_save">Extract split APK and save</string>
+    <string name="share_app_icon">Share app icon</string>
+    <string name="save_app_icon">Save app icon</string>
+    <string name="antisplit_merge_and_save">AntiSplit/merge and save</string>
+    <string name="more_information">More information</string>
+    <string name="filter">Filter</string>
+    <string name="app_info">App Info</string>
+    <string name="uninstall">Uninstall</string>
+    <string name="launch">Launch</string>
 </resources>

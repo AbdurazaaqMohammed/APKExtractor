@@ -60,6 +60,48 @@
             android:textSize="20sp"
             android:text="@string/show_icons" />
 
+            <Switch
+                android:id="@+id/showLastUpdateToggle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="@string/show_last_updated" />
+
+            <Switch
+                android:id="@+id/showFirstInstallToggle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="@string/show_first_install" />
+
+            <Switch
+                android:id="@+id/showVersionNameToggle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="@string/show_v_name" />
+
+            <Switch
+                android:id="@+id/showVersionCodeToggle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="@string/show_v_code" />
+
+            <Switch
+                android:id="@+id/showAppNameToggle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="@string/show_app" />
+
+            <Switch
+                android:id="@+id/showPkgNameToggle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="@string/show_pkg" />
+
             <Button
                android:id="@+id/langPicker"
                android:layout_width="fill_parent"

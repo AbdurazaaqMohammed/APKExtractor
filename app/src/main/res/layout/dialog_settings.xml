@@ -81,6 +81,78 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"/>
 
+        <TextView
+            android:id="@+id/showLastUpdateToggleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="@string/show_last_updated" />
+
+        <ToggleButton
+            android:id="@+id/showLastUpdateToggle"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"/>
+
+        <TextView
+            android:id="@+id/showFirstInstallToggleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="@string/show_first_install" />
+
+        <ToggleButton
+            android:id="@+id/showFirstInstallToggle"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"/>
+
+        <TextView
+            android:id="@+id/showVersionNameToggleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="@string/show_v_name" />
+
+        <ToggleButton
+            android:id="@+id/showVersionNameToggle"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"/>
+
+        <TextView
+            android:id="@+id/showVersionCodeToggleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="@string/show_v_code" />
+
+        <ToggleButton
+            android:id="@+id/showVersionCodeToggle"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"/>
+
+        <TextView
+            android:id="@+id/showAppNameToggleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="@string/show_app" />
+
+        <ToggleButton
+            android:id="@+id/showAppNameToggle"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"/>
+
+        <TextView
+            android:id="@+id/showPkgNameToggleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="@string/show_pkg" />
+
+        <ToggleButton
+            android:id="@+id/showPkgNameToggle"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"/>
+
         <Button
             android:id="@+id/langPicker"
             android:layout_width="fill_parent"

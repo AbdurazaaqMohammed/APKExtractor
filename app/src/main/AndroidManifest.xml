@@ -4,19 +4,18 @@
     >
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="29"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="29"/>
+    <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES"/>
     <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" tools:ignore="QueryAllPackagesPermission" />
     <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" android:minSdkVersion="30"
         tools:ignore="ScopedStorage" />
     <application
         android:name="android.support.multidex.MultiDexApplication"
-        android:allowBackup="true"
         android:icon="@drawable/apk_extractor"
         android:label="@string/app_name"
         android:roundIcon="@drawable/apk_extractor"
         android:supportsRtl="true"
         android:largeHeap="true"
-        android:theme="@style/AppTheme"
-        tools:ignore="UnusedAttribute">
+        android:theme="@style/AppTheme">
         <activity
             android:name="io.github.abdurazaaqmohammed.ApkExtractor.MainActivity"
             android:exported="true">
@@ -27,7 +26,7 @@
         </activity>
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="${applicationId}.provider"
+            android:authorities="io.github.abdurazaaqmohammed.ApkExtractor.provider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
