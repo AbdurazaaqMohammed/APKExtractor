@@ -6,7 +6,6 @@ import static io.github.abdurazaaqmohammed.ApkExtractor.LegacyUtils.supportsActi
 import static io.github.abdurazaaqmohammed.ApkExtractor.LegacyUtils.supportsArraysCopyOfAndDownloadManager;
 import static io.github.abdurazaaqmohammed.ApkExtractor.LegacyUtils.supportsFileChannel;
 import static io.github.abdurazaaqmohammed.ApkExtractor.LegacyUtils.supportsSplits;
-import static com.reandroid.apkeditor.merge.LogUtil.logEnabled;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -35,8 +34,6 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.Handler;
-import android.os.Looper;
 import android.provider.OpenableColumns;
 import android.support.v4.content.FileProvider;
 import android.text.Editable;
@@ -63,7 +60,6 @@ import android.widget.Toast;
 
 import com.android.apksig.internal.util.Pair;
 import com.reandroid.apk.ApkBundle;
-import com.reandroid.apkeditor.merge.LogUtil;
 import com.reandroid.apkeditor.merge.Merger;
 
 import java.io.File;
@@ -176,7 +172,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         new AppLoaderTask(this).execute();
         super.onCreate(savedInstanceState);
-        handler = new Handler(Looper.getMainLooper());
+        //handler = new Handler(Looper.getMainLooper());
 
         deleteDir(getCacheDir());
 
@@ -198,7 +194,6 @@ public class MainActivity extends Activity {
 
         // Load preferences
         signApk = settings.getBoolean("signApk", true);
-        logEnabled = settings.getBoolean("logEnabled", true);
         ask = settings.getBoolean("ask", true);
         showIcon = settings.getBoolean("showIcon", true);
         showFirstInstalled = settings.getBoolean("showFirstInstalled", true);
@@ -247,7 +242,30 @@ public class MainActivity extends Activity {
 
             CompoundButton signToggle = l.findViewById(R.id.signToggle);
             signToggle.setChecked(signApk);
-            signToggle.setOnCheckedChangeListener((buttonView, isChecked) -> signApk = isChecked);
+            signToggle.setOnCheckedChangeListener((buttonView, isChecked) -> {
+                if(isChecked) {
+                    TextView title = new TextView(this);
+                    title.setText(rss.getString(R.string.warning));
+                    title.setTextColor(textColor);
+                    title.setTextSize(25);
+                    TextView msg = new TextView(this);
+                    msg.setText(rss.getString(R.string.warn_sign));
+                    msg.setTextColor(textColor);
+                    msg.setTextSize(20);
+                    styleAlertDialog(new AlertDialog.Builder(this)
+                        .setCustomTitle(title)
+                        .setView(msg)
+                        .setNegativeButton(rss.getString(R.string.cancel), (dialog, which) -> {
+                            signToggle.setChecked(signApk = false);
+                            dialog.dismiss();
+                        })
+                        .setPositiveButton("OK", (dialog, which) -> {
+                            signApk = true;
+                            dialog.dismiss();
+                        })
+                        .create(), null, null);
+                }
+            });
             signToggle.setVisibility(antisplit ? View.VISIBLE : View.GONE);
             if (!supportsSwitch)
                 findViewById(R.id.signToggleText).setVisibility(antisplit ? View.VISIBLE : View.GONE);
@@ -685,7 +703,9 @@ public class MainActivity extends Activity {
                 viewHolder = (GroupViewHolder) convertView.getTag();
             }
             viewHolder.appName.setText(appInfo.name);
+            viewHolder.appName.setTextColor(textColor);
             viewHolder.packageNameView.setText(appInfo.packageName);
+            viewHolder.packageNameView.setTextColor(textColor);
             viewHolder.appIconView.setImageDrawable(appInfo.icon);
             LightingColorFilter lcf = new LightingColorFilter(Color.BLACK, textColor);
             viewHolder.extractIconView.setColorFilter(lcf);
@@ -917,7 +937,6 @@ public class MainActivity extends Activity {
     @Override
     protected void onPause() {
         SharedPreferences.Editor e = getSharedPreferences("set", Context.MODE_PRIVATE).edit()
-                .putBoolean("logEnabled", logEnabled)
                 .putBoolean("ask", ask)
                 .putBoolean("signApk", signApk)
                 .putBoolean("showIcon", showIcon)
@@ -937,8 +956,6 @@ public class MainActivity extends Activity {
         else e.commit();
         super.onPause();
     }
-
-    private Handler handler;
 
     public static void deleteDir(File dir) {
         // There should never be folders in here.
@@ -978,7 +995,7 @@ public class MainActivity extends Activity {
                 File apkDirectory = baseApk.getParentFile();
                 boolean split = canSetNotificationBarTransparent && ai.splitSourceDirs != null;
                 if (split && antisplit) try (ApkBundle bundle = new ApkBundle()) {
-                    bundle.loadApkDirectory(apkDirectory, false, activity);
+                    bundle.loadApkDirectory(apkDirectory, false);
                     Merger.run(bundle, cacheDir, uris[0], activity, signApk);
                 }
                 else try (OutputStream os = FileUtils.getOutputStream(uris[0], activity)) {
@@ -1021,7 +1038,6 @@ public class MainActivity extends Activity {
     private void showSuccess() {
         if (errorOccurred) return;
         final String success = rss.getString(R.string.success_saved);
-        LogUtil.logMessage(success);
         runOnUiThread(() -> Toast.makeText(this, success, Toast.LENGTH_SHORT).show());
     }
 
@@ -1074,7 +1090,6 @@ public class MainActivity extends Activity {
                 int cut = Objects.requireNonNull(result).lastIndexOf('/'); // Ensure it throw the NullPointerException here to be caught
                 if (cut != -1) result = result.substring(cut + 1);
             }
-            LogUtil.logMessage(result);
             return supportsFileChannel && isSplit && antisplit
                     //&& context.getPackageManager().getApplicationInfo(pkgName, 0).splitNames != null
                     ? result.replaceFirst("\\.(?:xapk|aspk|apk[sm])", "_antisplit.apk") : result;

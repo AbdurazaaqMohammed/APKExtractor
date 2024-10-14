@@ -100,4 +100,5 @@
     <string name="app_info">App Info</string>
     <string name="uninstall">Uninstall</string>
     <string name="launch">Launch</string>
+    <string name="warn_sign">After merging, the original signature of an APK will be invalid and it must be signed in order to install it. This will break updating the app from official sources. Some apps verify the signature of the APK or take other measures to check if the app was modified, which may cause it to crash on startup.</string>
 </resources>

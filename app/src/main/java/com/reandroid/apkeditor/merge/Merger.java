@@ -15,12 +15,10 @@
  */
 package com.reandroid.apkeditor.merge;
 
-import static com.reandroid.apkeditor.merge.LogUtil.logMessage;
 
 import android.content.Context;
 import android.net.Uri;
 
-import io.github.abdurazaaqmohammed.ApkExtractor.R;
 import io.github.abdurazaaqmohammed.ApkExtractor.MainActivity;
 import io.github.abdurazaaqmohammed.ApkExtractor.SignUtil;
 
@@ -47,19 +45,13 @@ import java.util.List;
 
 public class Merger {
 
-    public interface LogListener {
-        void onLog(String log);
-
-        void onLog(int resID);
-    }
-
     public static void run(ApkBundle bundle, File cacheDir, Uri out, Context context, boolean signApk) throws IOException {
-        logMessage("Found modules: " + bundle.getApkModuleList().size());
+        //logMessage("Found modules: " + bundle.getApkModuleList().size());
 
         try (ApkModule mergedModule = bundle.mergeModules()) {
             if (mergedModule.hasAndroidManifest()) {
                 AndroidManifestBlock manifest = mergedModule.getAndroidManifest();
-                logMessage(MainActivity.rss.getString(R.string.sanitizing_manifest));
+                //logMessage(MainActivity.rss.getString(R.string.sanitizing_manifest));
                 int ID_requiredSplitTypes = 0x0101064e;
                 int ID_splitTypes = 0x0101064f;
 
@@ -113,7 +105,7 @@ public class Merger {
                                                     continue;
                                                 }
                                                 String path = resValue.getValueAsString();
-                                                logMessage(MainActivity.rss.getString(R.string.removed_table_entry) + " " + path);
+                                                //logMessage(MainActivity.rss.getString(R.string.removed_table_entry) + " " + path);
                                                 //Remove file entry
                                                 zipEntryMap.remove(path);
                                                 // It's not safe to destroy entry, resource id might be used in dex code.
@@ -131,18 +123,17 @@ public class Merger {
                         }
                         splits_removed = result;
                     }
-                    logMessage("Removed-element : <" + meta.getName() + "> name=\""
-                            + AndroidManifestHelper.getNamedValue(meta) + "\"");
+                  //  logMessage("Removed-element : <" + meta.getName() + "> name=\""+ AndroidManifestHelper.getNamedValue(meta) + "\"");
                     application.remove(meta);
                 }
                 manifest.refresh();
             }
-            logMessage(MainActivity.rss.getString(R.string.saving));
+           // logMessage(MainActivity.rss.getString(R.string.saving));
 
             File temp;
             if (signApk) {
                 mergedModule.writeApk(temp = new File(cacheDir, "temp.apk"));
-                logMessage(MainActivity.rss.getString(R.string.signing));
+               // logMessage(MainActivity.rss.getString(R.string.signing));
                 boolean noPerm = MainActivity.doesNotHaveStoragePerm(context);
                 File stupid = signedApk = new File(noPerm ? (cacheDir + File.separator + "stupid.apk") : FileUtils.getPath(out, context));
                 try {

@@ -16,7 +16,6 @@
 package com.reandroid.apkeditor.common;
 
 import com.reandroid.apk.ApkUtil;
-import com.reandroid.apkeditor.merge.LogUtil;
 import com.reandroid.app.AndroidManifest;
 import com.reandroid.arsc.chunk.xml.AndroidManifestBlock;
 import com.reandroid.arsc.chunk.xml.ResXmlAttribute;
@@ -75,12 +74,12 @@ public class AndroidManifestHelper {
                                                        int resourceId){
         ResXmlElement manifestElement = androidManifestBlock.getManifestElement();
         if(manifestElement == null){
-            LogUtil.logMessage("WARN: AndroidManifest don't have <manifest>");
+            //LogUtil.logMessage("WARN: AndroidManifest don't have <manifest>");
             return;
         }
         int removed = manifestElement.removeAttributesWithId(resourceId);
         if (removed > 0) {
-            LogUtil.logMessage("Removed-attribute : " + HexUtil.toHex8("@0x", resourceId));
+            //LogUtil.logMessage("Removed-attribute : " + HexUtil.toHex8("@0x", resourceId));
         }
     }
 

@@ -15,7 +15,6 @@
   */
 package com.reandroid.apk;
 
-import com.reandroid.apkeditor.merge.LogUtil;
 import com.reandroid.archive.ArchiveFile;
 import com.reandroid.archive.BlockInputSource;
 import com.reandroid.archive.FileInputSource;
@@ -135,19 +134,18 @@ public class ApkModule implements ApkFile, Closeable {
         if(exist != null){
             return exist;
         }
-        logMessage("Initializing android framework ...");
+        //logMessage("Initializing android framework ...");
         FrameworkApk frameworkApk;
         if(version == null){
-            logMessage("Can not read framework version, loading latest");
+           // logMessage("Can not read framework version, loading latest");
             frameworkApk = AndroidFrameworks.getLatest();
         }else {
-            logMessage("Loading android framework for version: " + version);
+           // logMessage("Loading android framework for version: " + version);
             frameworkApk = AndroidFrameworks.getBestMatch(version);
         }
         FrameworkTable frameworkTable = frameworkApk.getTableBlock();
         tableBlock.addFramework(frameworkTable);
-        logMessage("Initialized framework: " + frameworkApk.getName()
-                + " (" + frameworkApk.getVersionName() + ")");
+       // logMessage("Initialized framework: " + frameworkApk.getName()+ " (" + frameworkApk.getVersionName() + ")");
         return frameworkApk;
     }
 
@@ -530,7 +528,7 @@ public class ApkModule implements ApkFile, Closeable {
         if(manifest.guessCurrentPackageId() != 0x01){
             return;
         }
-        logMessage("Looks like framework apk, skip loading framework");
+        //logMessage("Looks like framework apk, skip loading framework");
         mDisableLoadFramework = true;
     }
 
@@ -703,7 +701,7 @@ public class ApkModule implements ApkFile, Closeable {
         if(!module.hasTableBlock()){
             return;
         }
-        logMessage("Merging resource table: "+module.getModuleName());
+        //logMessage("Merging resource table: "+module.getModuleName());
         TableBlock exist;
         if(!hasTableBlock()){
             exist=new TableBlock();
@@ -754,8 +752,7 @@ public class ApkModule implements ApkFile, Closeable {
             String name = DexFileInputSource.getDexName(index);
             DexFileInputSource add = new DexFileInputSource(name, source.getInputSource());
             zipEntryMap.add(add);
-            logMessage("Added [" + module.getModuleName() +"] "
-                    + source.getAlias() + " -> " + name);
+            //logMessage("Added [" + module.getModuleName() +"] " + source.getAlias() + " -> " + name);
             index++;
             if(index==1){
                 index=2;
@@ -768,9 +765,7 @@ public class ApkModule implements ApkFile, Closeable {
     public void setAPKLogger(APKLogger logger) {
         this.apkLogger = logger;
     }
-    void logMessage(String msg) {
-        LogUtil.logMessage(msg);
-    }
+
     public void setCloseable(Closeable closeable){
         this.mCloseable = closeable;
     }

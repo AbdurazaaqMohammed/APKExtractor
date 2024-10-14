@@ -10,8 +10,8 @@ android {
         applicationId = "io.github.abdurazaaqmohammed.ApkExtractor"
         minSdk = 4
         targetSdk = 35
-        versionCode = 1
-        versionName = "1.1"
+        versionCode = 2
+        versionName = "1.1.1"
         multiDexEnabled = true
     }
 
@@ -36,5 +36,11 @@ android {
     dependencies {
         implementation("com.android.support:multidex:1.0.3")
         coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.2")
+    }
+    dependenciesInfo {
+        // Disables dependency metadata when building APKs.
+        includeInApk = false
+        // Disables dependency metadata when building Android App Bundles.
+        includeInBundle = false
     }
 }

@@ -4,12 +4,10 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Build;
 
-import io.github.abdurazaaqmohammed.ApkExtractor.R;
 import com.aefyr.pseudoapksigner.IOUtils;
 import com.aefyr.pseudoapksigner.PseudoApkSigner;
 import com.android.apksig.ApkSigner;
 import com.android.apksig.apk.ApkFormatException;
-import com.reandroid.apkeditor.merge.LogUtil;
 import com.starry.FileUtils;
 
 
@@ -81,14 +79,14 @@ public class SignUtil {
                     PseudoApkSigner.sign(is, os, pastFile, privateKeyFile);
                 }
             } catch (Exception e2) {
-                LogUtil.logMessage(msg);
+              //  LogUtil.logMessage(msg);
                 try(OutputStream os = FileUtils.getOutputStream(out, context)) {
                     FileUtils.copyFile(temp, os);
                 }
                 throw(new RuntimeException(msg, e)); // for showError
             }
         } else {
-            LogUtil.logMessage(msg);
+           // LogUtil.logMessage(msg);
             try(OutputStream os = FileUtils.getOutputStream(out, context)) {
                 FileUtils.copyFile(temp, os);
             }

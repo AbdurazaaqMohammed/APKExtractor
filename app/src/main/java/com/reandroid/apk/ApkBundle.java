@@ -15,13 +15,6 @@
   */
 package com.reandroid.apk;
 
-import static io.github.abdurazaaqmohammed.ApkExtractor.MainActivity.rss;
-
-import android.content.Context;
-
-import io.github.abdurazaaqmohammed.ApkExtractor.MismatchedSplitsException;
-
-import com.reandroid.apkeditor.merge.LogUtil;
 import com.reandroid.archive.BlockInputSource;
 import com.reandroid.archive.ZipEntryMap;
 import com.reandroid.archive.block.ApkSignatureBlock;
@@ -91,7 +84,7 @@ public class ApkBundle implements Closeable {
         if(!hasOneTableBlock() || mergedModule.hasTableBlock()){
             return;
         }
-        LogUtil.logMessage("Merging string pools ... ");
+        //LogUtil.logMessage("Merging string pools ... ");
         TableBlock createdTable = new TableBlock();
         BlockInputSource<TableBlock> inputSource=
                 new BlockInputSource<>(TableBlock.FILE_NAME, createdTable);
@@ -109,9 +102,7 @@ public class ApkBundle implements Closeable {
 
         poolMerger.mergeTo(createdTable.getTableStringPool());
 
-        LogUtil.logMessage("Merged string pools="+poolMerger.getMergedPools()
-                +", style="+poolMerger.getMergedStyleStrings()
-                +", strings="+poolMerger.getMergedStrings());
+        //LogUtil.logMessage("Merged string pools="+poolMerger.getMergedPools() +", style="+poolMerger.getMergedStyleStrings()+", strings="+poolMerger.getMergedStrings());
     }
     private String generateMergedModuleName(){
         Set<String> moduleNames=mModulesMap.keySet();
@@ -152,17 +143,17 @@ public class ApkBundle implements Closeable {
         return new ArrayList<>(mModulesMap.values());
     }
 
-    public void loadApkDirectory(File dir, boolean recursive, Context context) throws IOException, MismatchedSplitsException, InterruptedException {
+    public void loadApkDirectory(File dir, boolean recursive) throws IOException {
         if(!dir.isDirectory()) throw new FileNotFoundException("No such directory: " + dir);
         List<File> apkList = recursive ? ApkUtil.recursiveFiles(dir, ".apk") : ApkUtil.listFiles(dir, ".apk");
         if(apkList.isEmpty()) throw new FileNotFoundException("No '*.apk' files in directory: " + dir);
-        LogUtil.logMessage("Found apk files: "+apkList.size());
+        //LogUtil.logMessage("Found apk files: "+apkList.size());
         load(apkList);
     }
 
     private void load(List<File> apkList) throws IOException {
         for(File file : apkList) {
-            LogUtil.logMessage("Loading: "+file.getName());
+            //LogUtil.logMessage("Loading: "+file.getName());
             addModule(ApkModule.loadApkFile(file, ApkUtil.toModuleName(file)));
         }
     }
