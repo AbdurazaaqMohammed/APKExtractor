@@ -1,0 +1,22 @@
+<h2>Features</h2>
+<ul>
+  <li>Save split APKs as archive or merge to single APK</li>
+  <li>Share APK</li>
+  <li>Extract:
+    <ul>
+      <li>Icon</li>
+      <li>resources.arsc</li>
+      <li>classes.dex files</li>
+      <li>AndroidManifest.xml</li>
+      <li>base.apk</li>
+      <li>libs</li>
+      <li>Choose split from Split APK to extract</li>
+    </ul>
+  </li>
+  <li>The option to display each of the above is available in settings.</li>
+  <li>All above features can be done in batch (multiple apps at once)</li>
+  <li>Sorting by name/first installed/last updated date</li>
+  <li>Divided into user and system apps by default.</li>
+  <li>Basic management (Launch, Uninstall, System app info)</li>
+  <li>Support Android 1.6+</li>
+</ul>
