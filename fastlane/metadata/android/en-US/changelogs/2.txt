@@ -1,0 +1,3 @@
+Remove unused logging
+Fix app name and package name not visible
+Show information about signing merged APKs

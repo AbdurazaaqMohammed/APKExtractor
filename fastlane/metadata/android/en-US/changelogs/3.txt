@@ -1,0 +1,4 @@
+Fix filtering, sharing, UI bugs
+Add options to extract icon, resources.arsc, classes.dex files, AndroidManifest.xml, base.apk, libs. Option to display each in settings.
+Add multiple selection for above features + regular extraction and sharing.
+Add option for Choose split from Split APK to extract

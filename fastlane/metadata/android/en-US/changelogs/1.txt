@@ -1,0 +1,8 @@
+Improve loading speed
+Divide apps into user and system apps
+remove unnecessary dependency, reduce size to 0.8MB
+Add options on pressing list item: Extract, Launch, Uninstall, Share, (System) App Info. For split apps has option to AntiSplit/merge separate from global toggle.
+Add quick extract option to the right of apps in the list
+Add option to sort by name, first installed or last updated date
+
+Still pre release because there are some UI bugs, share does not seem to be working properly and there is a bug in filtering (It filters but then after clearing field does not reinstate previous) that I can't figure out

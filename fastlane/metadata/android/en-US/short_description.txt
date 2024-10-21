@@ -1,0 +1,1 @@
+Simple APK extractor app, supports split APKs and merging them to single APK
