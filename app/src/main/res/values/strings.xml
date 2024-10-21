@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name" translatable="false">APK Extractor</string>
     <string name="merge">Select split APK to Merge/AntiSplit</string>
-    <string name="success_saved">File saved successfully</string>
+    <string name="success_saved">File saved successfully to %s</string>
     <string name="enable_logs" >Enable logs</string>
     <string name="ask">Ask where to save the file each time</string>
     <string name="grant_storage">Storage permission needed to save to the same dir as the selected file</string>
@@ -101,4 +101,18 @@
     <string name="uninstall">Uninstall</string>
     <string name="launch">Launch</string>
     <string name="warn_sign">After merging, the original signature of an APK will be invalid and it must be signed in order to install it. This will break updating the app from official sources. Some apps verify the signature of the APK or take other measures to check if the app was modified, which may cause it to crash on startup.</string>
+    <string name="user_apps">User apps</string>
+    <string name="system_apps">System apps</string>
+    <string name="share_apk">Share APK</string>
+    <string name="display_nfo">Display information</string>
+    <string name="display_functions">Display functions</string>
+    <string name="extract_icon">%sExtract icon</string>
+    <string name="extract_res">%sExtract resources.arsc</string>
+    <string name="extract_dex">%sExtract classes.dex files</string>
+    <string name="extract_manifest">%sExtract AndroidManifest.xml</string>
+    <string name="extract_base">%sExtract base.apk</string>
+    <string name="extract_libs">%sExtract libs</string>
+    <string name="choose_split">%sChoose split from Split APK to extract</string>
+    <string name="show">"Show "</string>
+    <string name="confirm">Confirm</string>
 </resources>

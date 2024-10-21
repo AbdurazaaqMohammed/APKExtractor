@@ -8,12 +8,12 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 /** @noinspection NullableProblems*/
-public class CustomArrayAdapter extends ArrayAdapter<String> {
+public class CustomArrayAdapter extends ArrayAdapter<CharSequence> {
     private final Context context;
-    private final String[] values;
+    private final CharSequence[] values;
     private final int textColor;
 
-    public CustomArrayAdapter(Context context, String[] values, int textColor) {
+    public CustomArrayAdapter(Context context, CharSequence[] values, int textColor) {
         super(context, android.R.layout.select_dialog_singlechoice, values);
         this.context = context;
         this.values = values;

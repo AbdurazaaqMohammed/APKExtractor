@@ -19,6 +19,7 @@
         android:id="@+id/appName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:maxLength="30"
         android:layout_toEndOf="@id/icon_view"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@id/icon_view"

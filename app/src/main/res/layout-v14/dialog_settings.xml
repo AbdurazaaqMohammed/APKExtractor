@@ -3,33 +3,26 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-        <LinearLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/changeTextColor"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:orientation="vertical">
+            android:layout_weight="1"
+            android:text="@string/change_text_color" />
 
-            <Button
-                android:id="@+id/changeTextColor"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/change_text_color" />
-
-            <Button
-                android:id="@+id/changeBgColor"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/change_background_color" />
-
-        </LinearLayout>
+        <Button
+            android:id="@+id/changeBgColor"
+            android:layout_marginTop="5dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/change_background_color" />
 
         <Switch
             android:id="@+id/ask"
@@ -53,6 +46,13 @@
             android:textSize="20sp"
             android:text="@string/sign_apk" />
 
+        <TextView
+            android:id="@+id/displayInfoTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/display_nfo" />
+
         <Switch
             android:id="@+id/showIconToggle"
             android:layout_width="match_parent"
@@ -60,54 +60,102 @@
             android:textSize="20sp"
             android:text="@string/show_icons" />
 
-            <Switch
-                android:id="@+id/showLastUpdateToggle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="@string/show_last_updated" />
+        <Switch
+            android:id="@+id/showLastUpdateToggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="@string/show_last_updated" />
 
-            <Switch
-                android:id="@+id/showFirstInstallToggle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="@string/show_first_install" />
+        <Switch
+            android:id="@+id/showFirstInstallToggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="@string/show_first_install" />
 
-            <Switch
-                android:id="@+id/showVersionNameToggle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="@string/show_v_name" />
+        <Switch
+            android:id="@+id/showVersionNameToggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="@string/show_v_name" />
 
-            <Switch
-                android:id="@+id/showVersionCodeToggle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="@string/show_v_code" />
+        <Switch
+            android:id="@+id/showVersionCodeToggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="@string/show_v_code" />
 
-            <Switch
-                android:id="@+id/showAppNameToggle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="@string/show_app" />
+        <Switch
+            android:id="@+id/showAppNameToggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="@string/show_app" />
 
-            <Switch
-                android:id="@+id/showPkgNameToggle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="@string/show_pkg" />
+        <Switch
+            android:id="@+id/showPkgNameToggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="@string/show_pkg" />
 
-            <Button
-               android:id="@+id/langPicker"
-               android:layout_width="fill_parent"
-               android:layout_height="0dp"
-               android:layout_weight="1"
-               android:text="@string/lang" />
+        <TextView
+            android:id="@+id/displayFuncTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/display_functions" />
 
-       </LinearLayout>
-   </ScrollView>
+        <Switch
+            android:id="@+id/showExtractIconToggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp" />
+
+        <Switch
+            android:id="@+id/showExtractResToggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp" />
+
+        <Switch
+            android:id="@+id/showExtractDexToggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp" />
+
+        <Switch
+            android:id="@+id/showExtractManifestToggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp" />
+
+        <Switch
+            android:id="@+id/showExtractBaseToggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp" />
+
+        <Switch
+            android:id="@+id/showExtractSplitToggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp" />
+
+        <Switch
+            android:id="@+id/showExtractLibsToggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/langPicker"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lang" />
+
+    </LinearLayout>
+</ScrollView>

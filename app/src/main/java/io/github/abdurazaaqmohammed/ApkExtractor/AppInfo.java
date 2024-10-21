@@ -23,4 +23,7 @@ public class AppInfo {
         this.versionName = versionName;
         this.versionCode = versionCode;
     }
+    public String getVersionName() {
+        return versionName.replace('/', '_');
+    }
 }

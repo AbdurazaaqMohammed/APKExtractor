@@ -57,6 +57,7 @@ public class FileUtils {
     }
 
     public static OutputStream getOutputStream(File file) throws IOException {
+        if(file.getParentFile() != null && !file.getParentFile().exists()) file.getParentFile().mkdir();
         return LegacyUtils.supportsFileChannel ?
                 Files.newOutputStream(file.toPath(), java.nio.file.StandardOpenOption.CREATE, StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING)
         : new FileOutputStream(file);

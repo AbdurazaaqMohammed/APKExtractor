@@ -32,6 +32,6 @@
     <string name="sign_failed">Не удалось подписать APK, сохранено без подписи</string>
     <string name="signing">Подпись APK…</string>
     <string name="skipping">"Пропуск "</string>
-    <string name="success_saved">Файл успешно сохранен</string>
+    <string name="success_saved">Файл успешно сохранен: %s</string>
     <string name="unselected">: Не выбрано</string>
 </resources>

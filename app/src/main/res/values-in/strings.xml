@@ -1,6 +1,6 @@
 <resources>
     <string name="merge">Pilih APK terpisah yang ingin Dileburkan/Di-AntiSplit</string>
-    <string name="success_saved">Berkas berhasil disimpan</string>
+    <string name="success_saved">Berkas berhasil disimpan: %s</string>
     <string name="enable_logs" >Aktifkan log</string>
     <string name="ask">Tanyakan terus di mana berkas akan disimpan</string>
     <string name="grant_storage">Perizinan penyimpanan diperlukan untuk menyimpan ke direktori yang sama dengan berkas yang dipilih</string>

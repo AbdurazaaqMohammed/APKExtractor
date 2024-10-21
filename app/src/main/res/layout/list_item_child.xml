@@ -25,11 +25,7 @@
             android:text="@string/last_update" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingTop="8dp">
+
 
         <Button
             android:id="@+id/btn_extract"
@@ -57,35 +53,68 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/uninstall"
-            android:background="@android:color/transparent"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp" />
+            android:background="@android:color/transparent" />
 
         <Button
             android:id="@+id/btn_share"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/extract_and_share"
-            android:background="@android:color/transparent"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp" />
+            android:background="@android:color/transparent" />
 
         <Button
             android:id="@+id/btn_antisplit_share"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/antisplit_merge_and_share"
-            android:background="@android:color/transparent"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp" />
+            android:background="@android:color/transparent" />
 
         <Button
             android:id="@+id/btn_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/app_info"
-            android:background="@android:color/transparent"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp" />
-    </LinearLayout>
+            android:background="@android:color/transparent" />
+
+        <Button
+            android:id="@+id/extractIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent" />
+
+        <Button
+            android:id="@+id/extractBase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent" />
+
+        <Button
+            android:id="@+id/extractDex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent" />
+
+        <Button
+            android:id="@+id/extractLibs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent" />
+
+        <Button
+            android:id="@+id/extractManifest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent" />
+
+        <Button
+            android:id="@+id/extractRes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent" />
+
+        <Button
+            android:id="@+id/extractSplit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent" />
 </LinearLayout>

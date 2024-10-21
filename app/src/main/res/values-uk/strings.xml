@@ -32,6 +32,6 @@
     <string name="sign_failed">Неможливо підписати APK, збережено без підпису</string>
     <string name="signing">Підпис APK…</string>
     <string name="skipping">"Перепустка "</string>
-    <string name="success_saved">Файл успішно збережено</string>
+    <string name="success_saved">Файл успішно збережено: %s</string>
     <string name="unselected">: Не вибрано</string>
 </resources>

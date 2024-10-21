@@ -3,33 +3,28 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <!-- Buttons for changing text color and background -->
+        <Button
+            android:id="@+id/changeTextColor"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:orientation="vertical">
+            android:layout_weight="1"
+            android:text="@string/change_text_color" />
 
-            <Button
-                android:id="@+id/changeTextColor"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/change_text_color" />
-
-            <Button
-                android:id="@+id/changeBgColor"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/change_background_color" />
-
-        </LinearLayout>
+        <Button
+            android:id="@+id/changeBgColor"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="5dp"
+            android:text="@string/change_background_color" />
 
         <TextView
             android:id="@+id/askText"
@@ -37,25 +32,23 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="@string/ask" />
-
         <ToggleButton
             android:id="@+id/ask"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/antisplitText"
             android:layout_width="match_parent"
-            android:visibility="gone"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             android:textSize="20sp"
             android:text="@string/merge_splits" />
-
         <ToggleButton
             android:id="@+id/antisplitToggle"
-            android:visibility="gone"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_width="match_parent"/>
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/signToggleText"
@@ -63,11 +56,17 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="@string/sign_apk" />
-
         <ToggleButton
             android:id="@+id/signToggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/displayInfoTitle"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_width="match_parent"/>
+            android:layout_gravity="center_horizontal"
+            android:text="@string/display_nfo" />
 
         <TextView
             android:id="@+id/showIconToggleText"
@@ -75,11 +74,10 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="@string/show_icons" />
-
         <ToggleButton
             android:id="@+id/showIconToggle"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/showLastUpdateToggleText"
@@ -87,11 +85,10 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="@string/show_last_updated" />
-
         <ToggleButton
             android:id="@+id/showLastUpdateToggle"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/showFirstInstallToggleText"
@@ -99,11 +96,10 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="@string/show_first_install" />
-
         <ToggleButton
             android:id="@+id/showFirstInstallToggle"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/showVersionNameToggleText"
@@ -111,11 +107,10 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="@string/show_v_name" />
-
         <ToggleButton
             android:id="@+id/showVersionNameToggle"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/showVersionCodeToggleText"
@@ -123,11 +118,10 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="@string/show_v_code" />
-
         <ToggleButton
             android:id="@+id/showVersionCodeToggle"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/showAppNameToggleText"
@@ -135,11 +129,10 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="@string/show_app" />
-
         <ToggleButton
             android:id="@+id/showAppNameToggle"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/showPkgNameToggleText"
@@ -147,18 +140,93 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="@string/show_pkg" />
-
         <ToggleButton
             android:id="@+id/showPkgNameToggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/displayFuncTitle"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_width="match_parent"/>
+            android:layout_gravity="center_horizontal"
+            android:text="@string/display_functions" />
+
+        <TextView
+            android:id="@+id/showExtractIconToggleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp" />
+        <ToggleButton
+            android:id="@+id/showExtractIconToggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/showExtractResToggleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp" />
+        <ToggleButton
+            android:id="@+id/showExtractResToggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/showExtractDexToggleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp" />
+        <ToggleButton
+            android:id="@+id/showExtractDexToggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/showExtractManifestToggleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp" />
+        <ToggleButton
+            android:id="@+id/showExtractManifestToggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/showExtractBaseToggleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp" />
+        <ToggleButton
+            android:id="@+id/showExtractBaseToggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/showExtractSplitToggleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp" />
+        <ToggleButton
+            android:id="@+id/showExtractSplitToggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/showExtractLibsToggleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"/>
+        <ToggleButton
+            android:id="@+id/showExtractLibsToggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <Button
             android:id="@+id/langPicker"
             android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:text="@string/lang" />
 
-       </LinearLayout>
+    </LinearLayout>
 </ScrollView>

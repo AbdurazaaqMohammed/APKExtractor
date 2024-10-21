@@ -17,7 +17,7 @@
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:id="@+id/userApps"
-            android:text="User apps" />
+            android:text="@string/user_apps" />
 
         <Button
             android:layout_width="0dp"
@@ -25,7 +25,7 @@
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:id="@+id/systemApps"
-            android:text="System apps" />
+            android:text="@string/system_apps" />
     </LinearLayout>
 
     <RelativeLayout
@@ -48,9 +48,9 @@
             android:id="@+id/settingsButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
+            android:layout_toLeftOf="@id/filterButton"
             android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/filterButton"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:contentDescription="@string/settings"
@@ -60,11 +60,24 @@
             android:id="@+id/filterButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toLeftOf="@id/settingsButton"
-            android:layout_toStartOf="@id/settingsButton"
+            android:layout_toLeftOf="@id/confirmButton"
+            android:layout_toStartOf="@id/confirmButton"
             android:layout_centerVertical="true"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
             android:contentDescription="@string/filter"
             android:src="@android:drawable/ic_menu_sort_by_size" />
+
+        <ImageView
+            android:id="@+id/confirmButton"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/confirm"
+            android:src="@android:drawable/checkbox_on_background" />
     </RelativeLayout>
 
     <ExpandableListView

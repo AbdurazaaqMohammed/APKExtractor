@@ -1,6 +1,6 @@
 <resources>
     <string name="merge">Selecione split APK para mesclar/AntiSplit</string>
-    <string name="success_saved">Arquivo salvo com sucesso</string>
+    <string name="success_saved">Arquivo salvo com sucesso: %s</string>
     <string name="enable_logs" >Ativar logs</string>
     <string name="ask">Pergunte onde salvar o arquivo a cada vez</string>
     <string name="grant_storage">Permissão de armazenamento necessária para salvar no mesmo diretório do arquivo selecionado</string>

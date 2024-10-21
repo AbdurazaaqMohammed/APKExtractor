@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="merge">Seleccionar APK divididos para Fusionar/AntiSplit</string>
-    <string name="success_saved">Archivo guardado exitosamente</string>
+    <string name="success_saved">Archivo guardado exitosamente: %s</string>
     <string name="enable_logs">Habilitar registros.</string>
     <string name="ask">Preguntar dónde guardar</string>
     <string name="grant_storage">Se requiere permiso para guardar en el mismo directorio del archivo.</string>

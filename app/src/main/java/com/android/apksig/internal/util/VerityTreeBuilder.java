@@ -230,7 +230,7 @@ public class VerityTreeBuilder implements Closeable {
 
         final byte[][] hashes = new byte[chunks][];
 
-        if (LegacyUtils.canSetNotificationBarTransparent) {
+        if (LegacyUtils.supportsSplits) {
             Phaser tasks = new Phaser(1);
             // Reading the input file as fast as we can.
             final long maxReadSize = ioSizeChunks * CHUNK_SIZE;
