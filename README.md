@@ -7,8 +7,7 @@
 
 ### IzzyOnDroid
 
-[![APK Extractor](https://img.shields.io/endpoint?url=https%3A%2F%2Fapt.izzysoft.de%2Ffdroid%2Fapi%2Fv1%2Fshield%2Fio.github.abdurazaaqmohammed.ApkExtractor&style=for-the-badge&logo=f-droid&label=APK%20Extractor)](https://android.izzysoft.de/repo/apk/io.github.abdurazaaqmohammed.ApkExtractor)
-
+[![APK Extractor](https://img.shields.io/endpoint?url=https%3A%2F%2Fapt.izzysoft.de%2Ffdroid%2Fapi%2Fv1%2Fshield%2Fio.github.abdurazaaqmohammed.ApkExtractor&style=for-the-badge&logo=f-droid&label=APK%20Extractor)](https://apt.izzysoft.de/fdroid/index/apk/io.github.abdurazaaqmohammed.ApkExtractor)
 ## Features 
 * Save split APKs as archive or merge to single APK
 * Share APK
